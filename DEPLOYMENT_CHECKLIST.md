@@ -3,13 +3,13 @@
 ## ✅ Pre-Deployment Checklist
 
 ### **1. Code Preparation**
-- [x] Dockerfile created and tested
+- [x] Dockerfile created and tested (Railway-optimized)
 - [x] railway.toml configured with cron scheduling
 - [x] Environment variables moved to .env.example
-- [x] Production job monitor created (job_monitor_production.py)
+- [x] Railway job monitor created (job_monitor_railway.py) with fallback scraping
 - [x] Web server with health checks created (web_server.py)
 - [x] Startup script created (startup.py)
-- [x] All tests passing (test_production.py)
+- [x] All tests passing (test_railway_setup.py)
 
 ### **2. Configuration Files**
 - [x] requirements.txt updated with Flask
@@ -22,6 +22,7 @@
 - [x] Cron job scheduled for 7 AM UTC (9 AM Poland time)
 - [x] Health check endpoint configured
 - [x] Restart policy configured
+- [x] Playwright fallback to requests+beautifulsoup implemented
 
 ## 🚀 Deployment Steps
 

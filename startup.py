@@ -35,9 +35,9 @@ def run_web_server():
 def run_job_monitor():
     """Run the job monitor in a separate thread"""
     try:
-        from job_monitor_production import ProductionJobMonitor
-        monitor = ProductionJobMonitor()
-        logger.info("Starting job monitor...")
+        from job_monitor_railway import RailwayJobMonitor
+        monitor = RailwayJobMonitor()
+        logger.info("Starting Railway job monitor...")
         monitor.start_scheduler()
     except Exception as e:
         logger.error(f"Job monitor error: {e}")
