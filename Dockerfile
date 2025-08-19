@@ -35,9 +35,9 @@ USER app
 # Expose port for health check
 EXPOSE 8000
 
-# Health check - more lenient for startup
-HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=5 \
-    CMD python -c "import requests; requests.get('http://localhost:8000/health', timeout=10)" || exit 1
+# Health check - simple and reliable
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD python -c "import requests; requests.get('http://localhost:8000/health', timeout=5)" || exit 1
 
 # Default command
-CMD ["python", "startup.py"]
+CMD ["python", "railway_startup.py"]
