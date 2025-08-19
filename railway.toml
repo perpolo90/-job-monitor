@@ -1,0 +1,19 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "python job_monitor.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+# Cron job configuration for daily runs at 9 AM Poland time
+[cron]
+schedule = "0 7 * * *"  # 7 AM UTC = 9 AM Poland time (CEST/CET)
+command = "python job_monitor.py --test"
+
+# Environment variables (will be set in Railway dashboard)
+[env]
+PYTHONUNBUFFERED = "1"
+TZ = "Europe/Warsaw"

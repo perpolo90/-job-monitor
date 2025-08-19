@@ -1,0 +1,7 @@
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+schedule>=1.1.0
+lxml>=4.6.3
+playwright>=1.40.0
+pytz>=2021.1
+flask>=2.3.0 
