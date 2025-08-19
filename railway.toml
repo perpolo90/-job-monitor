@@ -2,9 +2,9 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "python job_monitor.py"
+startCommand = "python startup.py"
 healthcheckPath = "/health"
-healthcheckTimeout = 300
+healthcheckTimeout = 60
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
 
